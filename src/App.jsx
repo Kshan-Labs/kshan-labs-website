@@ -13,7 +13,7 @@ function App() {
       </nav>
 
       <header>
-        <p>KSHAN LABS</p>
+        <p>KSHAN LABS / TECHNOLOGY JOURNAL</p>
 
         <h1>
           Learn.
@@ -24,8 +24,9 @@ function App() {
         </h1>
 
         <p>
-          A technology lab documenting the journey of learning,
-          building, and creating with code.
+          A technology lab documenting experiments, projects,
+          software development, Linux, and the continuous process
+          of learning by building.
         </p>
 
         <div>
@@ -35,38 +36,51 @@ function App() {
       </header>
 
       <section id="about">
-        <h2>About</h2>
+        <p>01 / ABOUT</p>
+        <h2>Building in public.</h2>
+
         <p>
           KSHAN Labs is a faceless technology brand focused on
-          software development, experimentation, Linux, and
-          continuous learning.
+          learning through practical projects, experimentation,
+          documentation, and continuous improvement.
         </p>
       </section>
 
       <section id="projects">
-        <h2>Projects</h2>
+        <p>02 / PROJECTS</p>
+        <h2>Things being built.</h2>
+
         <h3>KSHAN Labs Website</h3>
+
         <p>
           The first KSHAN Labs project — built while learning
-          React, Vite, Git, and GitHub.
+          React, Vite, Git, GitHub, and modern web development.
         </p>
       </section>
 
       <section id="journal">
-        <h2>Tech Journal</h2>
+        <p>03 / JOURNAL</p>
+        <h2>Learn. Document. Share.</h2>
+
         <p>
-          Notes, tutorials, experiments, and lessons from the
-          development journey.
+          Notes, tutorials, experiments, mistakes, discoveries,
+          and lessons from the development journey.
         </p>
       </section>
 
       <section id="contact">
-        <h2>Contact</h2>
-        <p>Get in touch with KSHAN Labs.</p>
+        <p>04 / CONTACT</p>
+        <h2>Let's build.</h2>
+
+        <p>
+          KSHAN Labs is open to interesting projects,
+          collaborations, and technology conversations.
+        </p>
       </section>
 
       <footer>
         <p>© 2026 KSHAN Labs</p>
+        <p>Learn. Build. Evolve.</p>
       </footer>
     </main>
   );

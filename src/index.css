@@ -68,6 +68,26 @@ header {
   padding: 80px 0;
 }
 
+header {
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "01";
+  position: absolute;
+  right: 0;
+  bottom: 40px;
+
+  font-size: 180px;
+  font-weight: bold;
+  line-height: 1;
+
+  color: #111827;
+  pointer-events: none;
+  user-select: none;
+}
+
 header > p:first-child {
   color: #64748b;
   font-size: 13px;

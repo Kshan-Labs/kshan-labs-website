@@ -1,3 +1,6 @@
+import ReactMarkdown from "react-markdown";
+import post from "./posts/building-kshan-labs.md?raw";
+
 function App() {
   return (
     <main>
@@ -92,6 +95,8 @@ function App() {
 
 <section id="journal-entry">
   <p>BUILD LOG / 001</p>
+  
+  <ReactMarkdown>{post}</ReactMarkdown>
 
   <h2>Building the KSHAN Labs Website</h2>
 

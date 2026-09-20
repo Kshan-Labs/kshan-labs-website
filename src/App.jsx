@@ -1,8 +1,17 @@
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
+const site = {
+  name: "KSHAN Labs",
+  tagline: "Learn. Build. Evolve.",
+};
 import "./App.css";
 
-const posts = import.meta.glob("./posts/*.md", {
+const posts = import.meta.glob("./posts/**/*.md", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
+const thoughtPosts = import.meta.glob("./posts/thoughts/*.md", {
   query: "?raw",
   import: "default",
   eager: true,
@@ -12,7 +21,7 @@ function App() {
   return (
     <main>
     <nav>
-  <a href="#top">KSHAN LABS</a>
+  <a href="#top">{site.name}</a>
 
   <div className="nav-links">
     <a href="#exploring">Exploring</a>
@@ -313,67 +322,70 @@ function App() {
   </div>
 </section>
 
- <section id="journal">
-  <p>06 / JOURNAL</p>
+<section id="journal">
+  <div className="journal-header">
+    <div className="journal-label">
+      <span>06</span>
+      <span>JOURNAL</span>
+    </div>
 
-  <div className="section-heading">
-    <h2>Notes from the lab.</h2>
-    <p>
-      Experiments, lessons, ideas, and the things I'm learning
-      while building KSHAN Labs.
-    </p>
+    <div className="journal-heading">
+      <div>
+        <span className="journal-kicker">FIELD NOTES / ARCHIVE</span>
+        <h2>Notes from the lab.</h2>
+      </div>
+
+      <p>
+        Experiments, lessons, ideas, and things I'm learning
+        while building KSHAN Labs.
+      </p>
+    </div>
   </div>
 
-  <div className="journal-grid">
-    <article className="journal-card journal-featured">
-      <div className="journal-number">001</div>
+  <div className="journal-list">
+    <article className="journal-row">
+      <span className="journal-index">001</span>
 
-      <div>
-        <p className="journal-meta">BUILD LOG / SEPTEMBER 2026</p>
-
+      <div className="journal-main">
+        <span className="journal-meta">BUILD LOG</span>
         <h3>Building the KSHAN Labs Website</h3>
-
-        <p>
-          Starting from a blank project and learning how React,
-          Vite, Git, GitHub, and GitHub Pages work together.
-        </p>
-
-        <a href="#journal-entry">Read build log →</a>
       </div>
+
+      <span className="journal-date">SEP 2026</span>
+
+      <a href="#journal-entry" className="journal-arrow">
+        ↗
+      </a>
     </article>
 
-    <article className="journal-card">
-      <div className="journal-number">002</div>
+    <article className="journal-row">
+      <span className="journal-index">002</span>
 
-      <div>
-        <p className="journal-meta">EXPERIENCE / LINUX</p>
-
+      <div className="journal-main">
+        <span className="journal-meta">EXPERIENCE</span>
         <h3>My Linux Journey</h3>
-
-        <p>
-          Learning the terminal, development environments,
-          Git workflows, and a different way of working with computers.
-        </p>
-
-        <a href="#journal-entry">Read experience →</a>
       </div>
+
+      <span className="journal-date">LINUX</span>
+
+      <a href="#my-linux-journey" className="journal-arrow">
+        ↗
+      </a>
     </article>
 
-    <article className="journal-card">
-      <div className="journal-number">003</div>
+    <article className="journal-row">
+      <span className="journal-index">003</span>
 
-      <div>
-        <p className="journal-meta">THOUGHTS / 001</p>
-
+      <div className="journal-main">
+        <span className="journal-meta">THOUGHTS</span>
         <h3>Learning by Building</h3>
-
-        <p>
-          Why building small things can be more valuable than
-          waiting until you feel ready.
-        </p>
-
-        <a href="#experiences">Read thoughts →</a>
       </div>
+
+      <span className="journal-date">001</span>
+
+      <a href="#learning-by-building" className="journal-arrow">
+        ↗
+      </a>
     </article>
   </div>
 </section>
@@ -410,65 +422,90 @@ function App() {
   </p>
 </section>
 
+<section id="building-kshan-labs" className="journal-entry">
+  <a href="#journal" className="journal-back">
+  ← Back to Journal
+</a>
+  <ReactMarkdown>{posts["./posts/building-kshan-labs.md"]}</ReactMarkdown>
+</section>
+
+<section id="my-linux-journey" className="journal-entry">
+  <a href="#journal" className="journal-back">
+  ← Back to Journal
+</a>
+  <ReactMarkdown>{posts["./posts/my-linux-journey.md"]}</ReactMarkdown>
+</section>
+
+<section id="learning-by-building" className="journal-entry">
+  <a href="#journal" className="journal-back">
+  ← Back to Journal
+</a>  
+  <ReactMarkdown>
+    {thoughtPosts["./posts/thoughts/learning-by-building.md"]}
+  </ReactMarkdown>
+</section>
+
 <section id="experiences">
-  <p>07 / EXPERIENCES & THOUGHTS</p>
+  <div className="section-label">
+    <span>07</span>
+    <span>THOUGHTS & EXPERIENCES</span>
+  </div>
 
   <div className="thoughts-intro">
-    <h2>Things learned along the way.</h2>
+    <div>
+      <span className="thoughts-kicker">FIELD NOTES / PERSONAL LOG</span>
+
+      <h2>
+        Things learned
+        <br />
+        along the way.
+      </h2>
+    </div>
 
     <p>
       Not everything worth documenting is a finished project.
-      Sometimes the lessons, mistakes, and questions matter more.
+      These are the lessons, observations, mistakes, and questions
+      that shape the way I learn and build.
     </p>
   </div>
 
   <div className="thoughts-list">
-    <article className="thought">
-      <span className="thought-number">01</span>
+  {Object.entries(thoughtPosts).map(([path, content], index) => (
+    <article className="thought" key={path}>
+      <span className="thought-number">
+        {String(index + 1).padStart(2, "0")}
+      </span>
 
       <div>
-        <span className="thought-label">BUILDING</span>
-        <h3>Learning by building</h3>
+        <span className="thought-label">FIELD NOTE</span>
+
+        <h3>
+          {content
+            .split("\n")
+            .find((line) => line.startsWith("# "))
+            ?.replace("# ", "") || "Untitled thought"}
+        </h3>
+
         <p>
-          Reading and watching tutorials can only take you so far.
-          Building something forces you to understand how the pieces
-          actually work together.
+          {content
+            .split("\n")
+            .find(
+              (line) =>
+                line.trim() &&
+                !line.startsWith("#") &&
+                !line.startsWith(">")
+            ) || "A note from the lab."}
         </p>
+
+        <a href="#journal-entry" className="thought-link">
+          Read thought ↗
+        </a>
       </div>
 
       <span className="thought-arrow">↗</span>
     </article>
-
-    <article className="thought">
-      <span className="thought-number">02</span>
-
-      <div>
-        <span className="thought-label">LINUX</span>
-        <h3>A different relationship with the computer</h3>
-        <p>
-          Linux has made me more curious about what happens underneath
-          the applications I normally use.
-        </p>
-      </div>
-
-      <span className="thought-arrow">↗</span>
-    </article>
-
-    <article className="thought">
-      <span className="thought-number">03</span>
-
-      <div>
-        <span className="thought-label">PROCESS</span>
-        <h3>Progress does not need to be perfect</h3>
-        <p>
-          Projects change while they are being built. Learning to
-          iterate instead of waiting for perfection is part of the process.
-        </p>
-      </div>
-
-      <span className="thought-arrow">↗</span>
-    </article>
-  </div>
+  ))}
+</div>
 </section>
 
       <section id="contact">
@@ -481,7 +518,7 @@ function App() {
     Get in touch with KSHAN Labs.
   </p>
 
-  <a className="contact-button" href="mailto:YOUR-KSHAN-LABS-EMAIL">
+  <a className="contact-button" href="mailto:kshanlabs00outlook.com">
     Contact KSHAN Labs →
   </a>
 </section>

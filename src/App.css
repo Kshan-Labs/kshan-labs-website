@@ -2888,3 +2888,875 @@ nav {
     gap: 20px;
   }
 }
+
+/* =========================================================
+   THOUGHTS — EDITORIAL FIELD NOTES
+   ========================================================= */
+
+.thoughts-kicker {
+  display: block;
+  margin-bottom: 24px;
+
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.thoughts-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.5fr);
+  gap: 80px;
+  align-items: end;
+
+  margin: 80px 0 100px;
+}
+
+.thoughts-intro h2 {
+  max-width: 900px;
+  margin: 0;
+
+  font-size: clamp(52px, 7vw, 110px);
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+}
+
+.thoughts-intro > p {
+  max-width: 390px;
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.thoughts-list {
+  border-top: 1px solid var(--line-strong);
+}
+
+.thought {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) 40px;
+  gap: 30px;
+  align-items: start;
+
+  padding: 44px 0;
+
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    padding-left 0.3s ease,
+    background 0.3s ease;
+}
+
+.thought:hover {
+  padding-left: 18px;
+}
+
+.thought-number {
+  padding-top: 5px;
+
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.thought-label {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.thought h3 {
+  max-width: 800px;
+  margin: 0 0 14px;
+
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+}
+
+.thought p {
+  max-width: 650px;
+  margin: 0 0 22px;
+
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.thought-link {
+  display: inline-flex;
+  align-items: center;
+
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border-bottom: 1px solid var(--line-strong);
+
+  padding-bottom: 5px;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.thought-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.thought-arrow {
+  padding-top: 3px;
+
+  color: var(--accent);
+  font-size: 20px;
+
+  transition: transform 0.3s ease;
+}
+
+.thought:hover .thought-arrow {
+  transform: translate(5px, -5px);
+}
+
+@media (max-width: 800px) {
+  .thoughts-intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 60px 0 70px;
+  }
+
+  .thoughts-intro > p {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .thoughts-intro h2 {
+    font-size: clamp(44px, 13vw, 70px);
+  }
+
+  .thought {
+    grid-template-columns: 35px minmax(0, 1fr) 20px;
+    gap: 12px;
+    padding: 32px 0;
+  }
+
+  .thought:hover {
+    padding-left: 8px;
+  }
+
+  .thought h3 {
+    font-size: 26px;
+    line-height: 1.05;
+  }
+
+  .thought p {
+    font-size: 14px;
+  }
+
+  .thought-arrow {
+    font-size: 16px;
+  }
+}
+
+/* =========================================================
+   HERO — REFINED LAB INTRO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-top: 34px;
+  padding-bottom: 34px;
+
+  overflow: hidden;
+}
+
+/* subtle technical atmosphere */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+
+  right: 5%;
+  top: 20%;
+
+  border: 1px solid rgba(215, 255, 79, 0.18);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 70px rgba(215, 255, 79, 0.025),
+    0 0 0 140px rgba(215, 255, 79, 0.015);
+
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  right: calc(5% + 255px);
+  top: calc(20% + 256px);
+
+  background: var(--accent);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 20px rgba(215, 255, 79, 0.5);
+
+  pointer-events: none;
+}
+
+/* top metadata */
+
+.hero-topline {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--line);
+
+  color: var(--dim);
+
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+/* main composition */
+
+.hero-main {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  gap: 80px;
+  align-items: end;
+
+  padding: clamp(80px, 11vh, 150px) 0;
+}
+
+.hero-label {
+  margin: 0 0 28px;
+
+  color: var(--accent);
+
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* main heading */
+
+.hero h1 {
+  max-width: 900px;
+
+  margin: 0;
+
+  font-size: clamp(58px, 8vw, 118px);
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+  font-weight: 500;
+}
+
+.hero h1 span {
+  color: var(--muted);
+}
+
+/* description column */
+
+.hero-description {
+  max-width: 390px;
+
+  padding-bottom: 6px;
+}
+
+.hero-description > p {
+  margin: 0 0 34px;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.hero-actions a {
+  color: var(--text);
+
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid var(--line-strong);
+
+  padding-bottom: 6px;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hero-actions a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateX(5px);
+}
+
+/* bottom metadata */
+
+.hero-bottom {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  padding-top: 20px;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--dim);
+
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+}
+
+.hero-bottom span:nth-child(2) {
+  text-align: center;
+}
+
+.hero-bottom span:last-child {
+  text-align: right;
+  color: var(--accent);
+}
+
+/* tablet */
+
+@media (max-width: 900px) {
+  .hero-main {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .hero-description {
+    max-width: 520px;
+  }
+
+  .hero::before {
+    width: 380px;
+    height: 380px;
+
+    right: -120px;
+    top: 35%;
+  }
+
+  .hero::after {
+    right: 65px;
+    top: calc(35% + 186px);
+  }
+}
+
+/* mobile */
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 88vh;
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .hero-topline {
+    font-size: 8px;
+  }
+
+  .hero-topline span:last-child {
+    display: none;
+  }
+
+  .hero-main {
+    padding: 70px 0 80px;
+    gap: 45px;
+  }
+
+  .hero h1 {
+    font-size: clamp(54px, 16vw, 82px);
+    line-height: 0.92;
+  }
+
+  .hero-description {
+    max-width: 330px;
+  }
+
+  .hero-description > p {
+    font-size: 14px;
+  }
+
+  .hero::before {
+    width: 280px;
+    height: 280px;
+
+    right: -150px;
+    top: 43%;
+  }
+
+  .hero::after {
+    right: -14px;
+    top: calc(43% + 136px);
+  }
+
+  .hero-bottom {
+    font-size: 8px;
+  }
+}
+
+/* =========================================================
+   JOURNAL — ARCHIVE
+   ========================================================= */
+
+#journal {
+  padding-top: clamp(90px, 11vw, 150px);
+  padding-bottom: clamp(90px, 11vw, 150px);
+}
+
+.journal-header {
+  margin-bottom: 70px;
+}
+
+.journal-label {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.journal-label span:first-child {
+  color: var(--accent);
+}
+
+.journal-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 70px;
+  align-items: end;
+
+  padding-top: 55px;
+}
+
+.journal-kicker {
+  display: block;
+  margin-bottom: 16px;
+
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.journal-heading h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 6vw, 86px);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+}
+
+.journal-heading p {
+  max-width: 320px;
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.journal-list {
+  border-top: 1px solid var(--line-strong);
+}
+
+.journal-row {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) 110px 35px;
+  gap: 30px;
+  align-items: center;
+
+  min-height: 125px;
+  padding: 25px 0;
+
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    padding-left 0.25s ease,
+    background 0.25s ease;
+}
+
+.journal-row:hover {
+  padding-left: 14px;
+}
+
+.journal-index {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.journal-main {
+  min-width: 0;
+}
+
+.journal-meta {
+  display: block;
+  margin-bottom: 9px;
+
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.journal-main h3 {
+  margin: 0;
+
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+}
+
+.journal-date {
+  color: var(--dim);
+
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-align: right;
+}
+
+.journal-arrow {
+  color: var(--text);
+
+  font-size: 18px;
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.journal-row:hover .journal-arrow {
+  color: var(--accent);
+  transform: translate(4px, -4px);
+}
+
+/* tablet */
+
+@media (max-width: 800px) {
+  .journal-heading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .journal-heading p {
+    max-width: 520px;
+  }
+
+  .journal-row {
+    grid-template-columns: 50px minmax(0, 1fr) 80px 25px;
+    gap: 18px;
+  }
+}
+
+/* mobile */
+
+@media (max-width: 640px) {
+  .journal-header {
+    margin-bottom: 50px;
+  }
+
+  .journal-heading {
+    padding-top: 40px;
+  }
+
+  .journal-heading h2 {
+    font-size: clamp(42px, 12vw, 62px);
+  }
+
+  .journal-row {
+    grid-template-columns: 35px minmax(0, 1fr) 20px;
+    gap: 12px;
+
+    min-height: 105px;
+  }
+
+  .journal-date {
+    display: none;
+  }
+
+  .journal-main h3 {
+    font-size: 21px;
+  }
+
+  .journal-row:hover {
+    padding-left: 7px;
+  }
+}
+
+/* =========================================================
+   JOURNAL ENTRIES — FIELD NOTES
+   ========================================================= */
+
+.journal-entry {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(80px, 10vw, 140px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.journal-entry + .journal-entry {
+  padding-top: 100px;
+}
+
+.journal-entry h1 {
+  margin: 0 0 18px;
+
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+}
+
+.journal-entry h1::before {
+  display: block;
+  margin-bottom: 18px;
+
+  content: "FIELD NOTE";
+  color: var(--accent);
+
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.journal-entry h2 {
+  margin: 0 0 45px;
+
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.journal-entry h3 {
+  margin: 55px 0 18px;
+
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+
+.journal-entry p {
+  max-width: 720px;
+  margin: 0 0 24px;
+
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.journal-entry ul {
+  max-width: 720px;
+  margin: 25px 0 35px;
+  padding-left: 22px;
+}
+
+.journal-entry li {
+  margin-bottom: 12px;
+
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.journal-entry blockquote {
+  max-width: 720px;
+  margin: 45px 0;
+  padding: 25px 0 25px 25px;
+
+  border-left: 2px solid var(--accent);
+
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.journal-entry blockquote p {
+  margin: 0;
+  color: inherit;
+}
+
+.journal-entry hr {
+  margin: 65px 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+/* mobile */
+
+@media (max-width: 640px) {
+  .journal-entry {
+    padding: 75px 0;
+  }
+
+  .journal-entry h1 {
+    font-size: clamp(38px, 11vw, 58px);
+  }
+
+  .journal-entry h2 {
+    margin-bottom: 35px;
+  }
+
+  .journal-entry p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .journal-entry h3 {
+    margin-top: 45px;
+    font-size: 21px;
+  }
+
+  .journal-entry blockquote {
+    margin: 35px 0;
+    padding-left: 18px;
+    font-size: 18px;
+  }
+}
+
+/* Journal back link */
+
+.journal-back {
+  display: inline-block;
+  margin-bottom: 45px;
+
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.journal-back:hover {
+  color: var(--accent);
+  transform: translateX(-4px);
+}
+
+.journal-row {
+  cursor: pointer;
+}
+
+.journal-row:hover .journal-main h3 {
+  color: var(--accent);
+}
+
+/* =========================================================
+   CONTACT — CTA
+   ========================================================= */
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-top: 28px;
+  padding: 15px 20px;
+
+  border: 1px solid var(--text);
+
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.contact-button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+@media (max-width: 640px) {
+  .contact-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

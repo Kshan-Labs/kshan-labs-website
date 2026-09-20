@@ -3760,3 +3760,37 @@ nav {
     justify-content: space-between;
   }
 }
+
+/* =========================================================
+   JOURNAL IMAGES
+   ========================================================= */
+
+.journal-entry img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+
+  margin: 45px 0;
+
+  border: 1px solid var(--line);
+
+  object-fit: cover;
+}
+
+.journal-entry img + em {
+  display: block;
+  margin-top: -30px;
+  margin-bottom: 40px;
+
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 640px) {
+  .journal-entry img {
+    margin: 35px 0;
+  }
+}

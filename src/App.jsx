@@ -524,8 +524,8 @@ function App() {
 </section>
 
       <footer>
-        <p>© 2026 KSHAN Labs</p>
-        <p>Learn. Build. Evolve.</p>
+        <p>© 2026 {site.name}</p>
+        <p>{site.tagline}</p>
       </footer>
     </main>
   );

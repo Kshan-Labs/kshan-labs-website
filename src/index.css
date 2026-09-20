@@ -317,3 +317,23 @@ footer {
 .journal-card a:hover {
   text-decoration: underline;
 }
+
+.contact-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 13px 20px;
+
+  border: 1px solid #334155;
+  border-radius: 8px;
+
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+.contact-button:hover {
+  background: #ffffff;
+  color: #0b0f19;
+}

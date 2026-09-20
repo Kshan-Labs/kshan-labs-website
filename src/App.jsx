@@ -90,14 +90,19 @@ function App() {
 </section>
 
       <section id="contact">
-        <p>04 / CONTACT</p>
-        <h2>Let's build.</h2>
+  <p>04 / CONTACT</p>
 
-        <p>
-          KSHAN Labs is open to interesting projects,
-          collaborations, and technology conversations.
-        </p>
-      </section>
+  <h2>Let's build.</h2>
+
+  <p>
+    Have a project idea, collaboration, or technology question?
+    Get in touch with KSHAN Labs.
+  </p>
+
+  <a className="contact-button" href="mailto:YOUR-KSHAN-LABS-EMAIL">
+    Contact KSHAN Labs →
+  </a>
+</section>
 
       <footer>
         <p>© 2026 KSHAN Labs</p>

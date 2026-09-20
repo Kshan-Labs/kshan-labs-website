@@ -1,5 +1,10 @@
 import ReactMarkdown from "react-markdown";
-import post from "./posts/building-kshan-labs.md?raw";
+
+const posts = import.meta.glob("./posts/*.md", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
 
 function App() {
   return (
@@ -95,8 +100,12 @@ function App() {
 
 <section id="journal-entry">
   <p>BUILD LOG / 001</p>
-  
-  <ReactMarkdown>{post}</ReactMarkdown>
+
+  {Object.entries(posts).map(([path, content]) => (
+  <article key={path}>
+    <ReactMarkdown>{content}</ReactMarkdown>
+  </article>
+))}
 
   <h2>Building the KSHAN Labs Website</h2>
 

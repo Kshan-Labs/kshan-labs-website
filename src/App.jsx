@@ -85,8 +85,34 @@ function App() {
       Vite, Git, GitHub, and GitHub Pages work together.
     </p>
 
-    <a href="#contact">Read build log →</a>
+    <a href="#journal-entry">Read build log →</a>
   </div>
+</section>
+
+<section id="journal-entry">
+  <p>BUILD LOG / 001</p>
+
+  <h2>Building the KSHAN Labs Website</h2>
+
+  <p>
+    This is where the KSHAN Labs journey begins.
+  </p>
+
+  <p>
+    The website started as a simple Vite project and gradually
+    evolved while learning React, CSS, Git, GitHub, and GitHub
+    Pages.
+  </p>
+
+  <p>
+    The goal is simple: learn by building, document the process,
+    and keep improving one project at a time.
+  </p>
+
+  <p>
+    <strong>Stack:</strong> React · Vite · CSS · Git · GitHub
+    Pages
+  </p>
 </section>
 
       <section id="contact">

@@ -337,3 +337,19 @@ footer {
   background: #ffffff;
   color: #0b0f19;
 }
+
+#journal-entry {
+  max-width: 760px;
+}
+
+#journal-entry h2 {
+  max-width: 700px;
+}
+
+#journal-entry p {
+  max-width: 700px;
+}
+
+#journal-entry strong {
+  color: #f8fafc;
+}

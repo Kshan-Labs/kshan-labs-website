@@ -2,76 +2,45 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0f19;
   color: #f8fafc;
 }
 
+a {
+  color: inherit;
+}
+
 main {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 60px 24px;
-}
-
-header {
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-header h1 {
-  font-size: 64px;
-  margin: 0;
-}
-
-header p {
-  font-size: 24px;
-  margin-top: 12px;
-  color: #94a3b8;
-}
-
-section {
-  padding: 50px 0;
-  border-top: 1px solid #334155;
-}
-
-section h2 {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-section p,
-section li {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #cbd5e1;
-}
-
-ul {
-  padding-left: 24px;
-}
-
-footer {
-  padding-top: 50px;
-  border-top: 1px solid #334155;
-  color: #64748b;
+  padding: 0 28px;
 }
 
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  background: #0f172a;
+
+  padding: 22px 0;
+
+  background: #0b0f19;
+  border-bottom: 1px solid #1e293b;
 }
 
 nav strong {
   font-size: 20px;
+  letter-spacing: 1px;
 }
 
 nav div {
@@ -80,115 +49,160 @@ nav div {
 }
 
 nav a {
-  color: #cbd5e1;
+  color: #94a3b8;
   text-decoration: none;
+  font-size: 14px;
 }
 
 nav a:hover {
-  color: #f8fafc;
+  color: #ffffff;
+}
+
+header {
+  min-height: 75vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 80px 0;
+}
+
+header > p:first-child {
+  color: #64748b;
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: bold;
 }
 
 header h1 {
-  max-width: 700px;
+  margin: 20px 0;
+  font-size: clamp(56px, 10vw, 110px);
+  line-height: 0.95;
+  letter-spacing: -5px;
 }
 
-header p:last-child {
+header > p:nth-of-type(2) {
   max-width: 650px;
+  color: #94a3b8;
+  font-size: 20px;
   line-height: 1.7;
 }
 
-.hero-buttons {
+header > div {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   margin-top: 30px;
 }
 
-.hero-buttons a {
-  display: inline-block;
-  padding: 12px 20px;
-  border: 1px solid #475569;
+header > div a {
+  padding: 13px 20px;
+  border: 1px solid #334155;
   border-radius: 8px;
-  color: #f8fafc;
+
   text-decoration: none;
+  font-size: 14px;
+
   transition: 0.2s ease;
 }
 
-.hero-buttons a:hover {
-  background: #1e293b;
-  border-color: #94a3b8;
+header > div a:hover {
+  background: #ffffff;
+  color: #0b0f19;
 }
 
-.project-card {
-  padding: 28px;
-  border: 1px solid #334155;
-  border-radius: 12px;
-  background: #111c31;
+section {
+  padding: 100px 0;
+  border-top: 1px solid #1e293b;
 }
 
-.project-card h3 {
-  font-size: 26px;
-  margin: 8px 0 12px;
+section h2 {
+  margin: 10px 0 20px;
+  font-size: 42px;
+  letter-spacing: -1px;
 }
 
-.project-card p {
+section p {
+  max-width: 700px;
+  color: #94a3b8;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+section h3 {
+  font-size: 28px;
+  margin-top: 35px;
+}
+
+section p:first-of-type {
   margin-bottom: 20px;
 }
 
-.project-label {
-  font-size: 14px !important;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #94a3b8 !important;
+section[id="projects"] {
+  padding-bottom: 120px;
 }
 
-.project-card span {
-  display: inline-block;
-  margin-right: 10px;
-  padding: 6px 10px;
-  border: 1px solid #475569;
-  border-radius: 6px;
+footer {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 30px 0 50px;
+
+  border-top: 1px solid #1e293b;
+
+  color: #64748b;
   font-size: 14px;
-  color: #cbd5e1;
 }
 
 @media (max-width: 700px) {
   main {
-    padding: 30px 18px;
+    padding: 0 18px;
   }
 
   nav {
     align-items: flex-start;
-    gap: 16px;
     flex-direction: column;
+    gap: 16px;
   }
 
   nav div {
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
   }
 
   header {
-    min-height: 50vh;
+    min-height: 70vh;
+    padding: 60px 0;
   }
 
   header h1 {
-    font-size: 42px;
+    font-size: 58px;
+    letter-spacing: -3px;
   }
 
-  header p {
-    font-size: 18px;
+  header > p:nth-of-type(2) {
+    font-size: 17px;
   }
 
-  .hero-buttons {
+  header > div {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .hero-buttons a {
+  header > div a {
     text-align: center;
   }
 
   section {
-    padding: 40px 0;
+    padding: 70px 0;
+  }
+
+  section h2 {
+    font-size: 34px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 8px;
   }
 }

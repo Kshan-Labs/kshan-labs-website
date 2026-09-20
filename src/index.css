@@ -353,3 +353,46 @@ footer {
 #journal-entry strong {
   color: #f8fafc;
 }
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.experience-card {
+  padding: 30px;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  background: #0f172a;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  border-color: #475569;
+}
+
+.experience-number {
+  margin: 0 0 24px;
+  color: #475569;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.experience-card h3 {
+  margin: 0 0 15px;
+  font-size: 23px;
+}
+
+.experience-card > p:not(.experience-number) {
+  margin: 0;
+  font-size: 16px;
+}
+
+@media (max-width: 800px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+}

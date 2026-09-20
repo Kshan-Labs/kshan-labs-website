@@ -8,6 +8,7 @@ function App() {
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#journal">Journal</a>
+          <a href="#experiences">Experiences</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -115,8 +116,43 @@ function App() {
   </p>
 </section>
 
+<section id="experiences">
+  <p>04 / EXPERIENCES & THOUGHTS</p>
+
+  <h2>Things I've learned along the way.</h2>
+
+  <div className="experience-grid">
+    <article className="experience-card">
+      <p className="experience-number">01</p>
+      <h3>Learning by Building</h3>
+      <p>
+        Notes about learning technology by creating real projects,
+        solving problems, and documenting the process.
+      </p>
+    </article>
+
+    <article className="experience-card">
+      <p className="experience-number">02</p>
+      <h3>Linux & Development</h3>
+      <p>
+        Experiences, discoveries, commands, workflows, and lessons
+        from working with Linux and development tools.
+      </p>
+    </article>
+
+    <article className="experience-card">
+      <p className="experience-number">03</p>
+      <h3>Thoughts & Ideas</h3>
+      <p>
+        Short thoughts, observations, ideas, and perspectives about
+        technology, creativity, and continuous learning.
+      </p>
+    </article>
+  </div>
+</section>
+
       <section id="contact">
-  <p>04 / CONTACT</p>
+  <p>05 / CONTACT</p>
 
   <h2>Let's build.</h2>
 

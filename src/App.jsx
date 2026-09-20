@@ -47,16 +47,29 @@ function App() {
       </section>
 
       <section id="projects">
-        <p>02 / PROJECTS</p>
-        <h2>Things being built.</h2>
+  <p>02 / PROJECTS</p>
+  <h2>Things being built.</h2>
 
-        <h3>KSHAN Labs Website</h3>
+  <div className="project-grid">
+    <article className="project-card">
+      <p className="project-number">01</p>
 
-        <p>
-          The first KSHAN Labs project — built while learning
-          React, Vite, Git, GitHub, and modern web development.
-        </p>
-      </section>
+      <h3>KSHAN Labs Website</h3>
+
+      <p>
+        The first KSHAN Labs project — built while learning
+        React, Vite, Git, GitHub, and modern web development.
+      </p>
+
+      <div className="project-tags">
+        <span>React</span>
+        <span>Vite</span>
+        <span>Git</span>
+        <span>GitHub</span>
+      </div>
+    </article>
+  </div>
+</section>
 
       <section id="journal">
         <p>03 / JOURNAL</p>

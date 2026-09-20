@@ -72,14 +72,22 @@ function App() {
 </section>
 
       <section id="journal">
-        <p>03 / JOURNAL</p>
-        <h2>Learn. Document. Share.</h2>
+  <p>03 / JOURNAL</p>
+  <h2>Learn. Document. Share.</h2>
 
-        <p>
-          Notes, tutorials, experiments, mistakes, discoveries,
-          and lessons from the development journey.
-        </p>
-      </section>
+  <div className="journal-card">
+    <p className="journal-meta">BUILD LOG / 001</p>
+
+    <h3>Building the KSHAN Labs Website</h3>
+
+    <p>
+      Starting from a blank project and learning how React,
+      Vite, Git, GitHub, and GitHub Pages work together.
+    </p>
+
+    <a href="#contact">Read build log →</a>
+  </div>
+</section>
 
       <section id="contact">
         <p>04 / CONTACT</p>
